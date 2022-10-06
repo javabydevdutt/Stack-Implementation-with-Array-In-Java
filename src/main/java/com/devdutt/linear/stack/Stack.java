@@ -16,7 +16,7 @@ public class Stack {
 
     //Operation:01- Insertion
     public void push(int data) {
-        if (top+1==capacity) {
+        if (top + 1 == capacity) {
             System.out.println("Stack is full can't inserted");
             return;
         }
@@ -26,6 +26,21 @@ public class Stack {
         arr[top] = data;
         System.out.println(data + " is inserted in the stack");
     }
+
+    //delete the element from the stack
+    public void pop() {
+        if (top == -1) {
+            System.out.println("Stack is empty");
+            return;
+        }
+
+        //place the arr[top] element in the data
+        int data = arr[top];
+        //decrement the top by 1
+        top = top - 1;
+        System.out.println(data + " is removed from the stack");
+    }
+
     public static void main(String[] args) {
         Stack stack = new Stack();
         stack.push(20);
@@ -34,5 +49,11 @@ public class Stack {
         stack.push(10);
         stack.push(40);
         stack.push(70);
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.pop();
     }//main
 }//class
